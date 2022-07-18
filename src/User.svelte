@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Card from './Card.svelte';
   async function fetchdata() {
     const response = await fetch('https://dummyjson.com/products');
     const data = await response.json();
@@ -8,16 +9,14 @@
   }
 </script>
 
-{#await fetchdata()}
+<!-- {#await fetchdata()}
   <p>Awaitinggg</p>
 {:then data}
   {#each data.products as product}
-    <p>{product.title}</p>
-    <p>{product.description}</p>
+    <Card {product} />
   {/each}
 {:catch error}
   <p>{error}</p>
-{/await}
-
+{/await} -->
 <style>
 </style>
