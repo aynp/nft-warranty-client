@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>Warrenty NFT</title>
   <meta name="description" content="Warrenty NFT Homepage" />
 </svelte:head>
 
