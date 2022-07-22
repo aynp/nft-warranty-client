@@ -5,3 +5,4 @@
 <a href="admin/addAdmin">Add Admin</a>
 <a href="admin/removeAdmin">Remove Admin</a>
 <a href="admin/isAdmin">Check Admin</a>
+<a href="admin/addSeller">Add Seller</a>

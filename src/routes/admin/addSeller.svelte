@@ -6,7 +6,10 @@
   const addSeller = async () => {
     console.log(walletAddress);
     try {
-      const tx = await Contract.removeAdmin(walletAddress);
+      const tx = await Contract.addSeller(walletAddress, {
+        nonce: undefined,
+        gasLimit: 10000000,
+      });
       await tx.wait();
       console.log(tx);
     } catch (error) {

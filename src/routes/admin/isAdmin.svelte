@@ -1,16 +1,22 @@
-<script lang="ts">
-  import Contract, { wallet } from '../../lib/base';
+<script>
+  import Contract from '$lib/base';
 
-  let address: string = '';
+  let walletAddress = '';
 
-  const isAdmin = async () => {
-    const result = await Contract.isAdmin(address);
-    console.log(result);
+  const addSeller = async () => {
+    console.log(walletAddress);
+    try {
+      const tx = await Contract.isSeller(walletAddress);
+      await tx.wait();
+      console.log(tx);
+    } catch (error) {
+      console.log('ERROR: ', error);
+    }
   };
 </script>
 
-<form on:submit|preventDefault={isAdmin}>
-  <label for="name">Address</label>
-  <input type="text" bind:value={address} />
+<form on:submit|preventDefault={addSeller}>
+  <label for="walletAddress">Wallet Address</label>
+  <input type="text" bind:value={walletAddress} />
   <button type="submit">Submit</button>
 </form>
