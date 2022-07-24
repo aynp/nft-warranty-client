@@ -1,20 +1,40 @@
-<script>
-  const user = {
+<script lang="ts">
+  const product_db = import.meta.env.VITE_BACKEND_API_URL;
+
+  const product = {
     name: '',
-    email: '',
-    phone: '',
+    productID: '',
+    price: '',
+    image: '',
   };
-  const submit = () => {
-    console.log(user);
+
+  const submit = async () => {
+    console.log(product);
+    fetch(`${product_db}/addProduct`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 </script>
 
 <form on:submit|preventDefault={submit}>
   <label for="name">Name</label>
-  <input type="text" bind:value={user.name} />
-  <label for="email">E-mail</label>
-  <input type="text" bind:value={user.email} />
-  <label for="phone">Phone</label>
-  <input type="text" bind:value={user.phone} />
-  <button type="submit">Submit</button>
+  <input type="text" bind:value={product.name} /><br />
+
+  <label for="productID">Product ID</label>
+  <input type="text" bind:value={product.productID} /><br />
+
+  <label for="price">Price</label>
+  <input type="text" bind:value={product.price} /><br />
+
+  <label for="image">Image URL</label>
+  <input type="text" bind:value={product.image} /><br />
+
+  <input type="submit" value="Submit" />
 </form>

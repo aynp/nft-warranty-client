@@ -1,5 +1,5 @@
 <script>
-  import Contract from '$lib/base';
+  import Contract from '$lib/contract';
 
   let walletAddress = '';
 

@@ -1,12 +1,12 @@
 import { ethers } from 'ethers';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const ALCHEMY_API_URL = import.meta.env.VITE_ALCHEMY_API_URL;
 const privateKey = import.meta.env.VITE_PRIVATE_KEY;
 const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
 
 import * as contract from '../artifacts/contracts/WarrentyNFT.sol/WarrentyNFT.json';
 
-const provider = new ethers.providers.JsonRpcProvider(API_URL);
+const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_API_URL);
 
 export const wallet = new ethers.Wallet(privateKey, provider);
 

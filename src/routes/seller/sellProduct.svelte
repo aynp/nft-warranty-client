@@ -1,14 +1,11 @@
 <script>
-  import Contract, { wallet } from '$lib/base';
+  import Contract, { wallet } from '$lib/contract';
 
   const productInfo = {
-    productID: 1,
-    serialNo: 1,
-    tokenID: 1,
+    productID: 0,
+    serialNo: 0,
+    tokenID: 0,
   };
-
-  const tokenUri =
-    'https://gateway.pinata.cloud/ipfs/QmettvXFnJNcmKngos1wYwohb7LtLB272z5sjzK2Eb5Qwd';
 
   const mintNFT = async () => {
     console.log(productInfo);
@@ -18,11 +15,6 @@
         productInfo.productID,
         productInfo.serialNo,
         productInfo.tokenID,
-        tokenUri,
-        {
-          nonce: undefined,
-          gasLimit: 20000000,
-        }
       );
       await tx.wait();
       console.log(tx);
