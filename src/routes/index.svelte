@@ -14,6 +14,7 @@
   <h1>HomePage</h1>
   <a href="/admin">Admin Panel</a>
   <a href="/seller">Seller Panel</a>
+  <a href="/customer">Customer Panel</a>
   <a href="/about">About</a>
 </section>
 
