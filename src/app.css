@@ -84,7 +84,7 @@ button:focus:not(:focus-visible) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 .basicBox {
   background: white;
