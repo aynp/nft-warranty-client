@@ -1,12 +1,12 @@
 <script>
-  import Contract from '$lib/contract';
+  import { ContractWithSigner } from '$lib/contract';
 
   let walletAddress = '';
 
   const removeAdmin = async () => {
     console.log(walletAddress);
     try {
-      const tx = await Contract.removeAdmin(walletAddress);
+      const tx = await ContractWithSigner.removeAdmin(walletAddress);
       await tx.wait();
       console.log(tx);
     } catch (error) {

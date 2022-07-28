@@ -1,17 +1,13 @@
 <script>
-  import Contract from '$lib/contract';
+  import { ContractWithSigner } from '$lib/contract';
 
   let walletAddress = '';
 
   const addSeller = async () => {
     console.log(walletAddress);
     try {
-      const tx = await Contract.addSeller(walletAddress, {
-        nonce: undefined,
-        gasLimit: 10000000,
-      });
+      const tx = await ContractWithSigner.addSeller(walletAddress);
       await tx.wait();
-      console.log(tx);
     } catch (error) {
       console.log('ERROR: ', error);
     }

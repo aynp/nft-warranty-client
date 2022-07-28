@@ -1,7 +1,8 @@
 <script>
-  import Contract, { wallet } from '$lib/contract';
+  import { ContractWithSigner } from '$lib/contract';
 
   const productInfo = {
+    ownerWallet: 0,
     productID: 0,
     serialNo: 0,
   };
@@ -9,8 +10,8 @@
   const mintNFT = async () => {
     try {
       const tokenID = productInfo.productID + productInfo.serialNo;
-      const tx = await Contract.mintWarrentyNFT(
-        wallet.address,
+      const tx = await ContractWithSigner.mintWarrentyNFT(
+        productInfo.ownerWallet,
         productInfo.productID,
         productInfo.serialNo,
         tokenID
@@ -23,6 +24,10 @@
 </script>
 
 <form on:submit|preventDefault={mintNFT}>
+  <label for="ownerWallet">Owner Wallet Address</label>
+  <input type="text" bind:value={productInfo.ownerWallet} />
+  <br />
+
   <label for="productID">Product ID</label>
   <input type="text" bind:value={productInfo.productID} />
   <br />
