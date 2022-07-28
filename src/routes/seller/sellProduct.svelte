@@ -22,14 +22,19 @@
   };
 </script>
 
-<form on:submit|preventDefault={mintNFT}>
-  <label for="productID">Product ID</label>
-  <input type="text" bind:value={productInfo.productID} />
-  <br />
+<div class="basicWindow">
+  <h1>Sell Product</h1>
+  <div class="basicBox input">
+    <form on:submit|preventDefault={mintNFT}>
+      <label for="productID">Product ID</label>
+      <input type="text" bind:value={productInfo.productID} />
+      <br />
 
-  <label for="serialNo">Serial No</label>
-  <input type="text" bind:value={productInfo.serialNo} />
-  <br />
+      <label for="serialNo">Serial No</label>
+      <input type="text" bind:value={productInfo.serialNo} />
+      <br />
 
-  <button type="submit">Submit</button>
-</form>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

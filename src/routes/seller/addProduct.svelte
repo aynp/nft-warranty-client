@@ -23,18 +23,23 @@
   };
 </script>
 
-<form on:submit|preventDefault={submit}>
-  <label for="name">Name</label>
-  <input type="text" bind:value={product.name} /><br />
+<div class="basicWindow">
+  <h1>Add Product</h1>
+  <div class="basicBox input">
+    <form on:submit|preventDefault={submit}>
+      <label for="name">Name</label>
+      <input type="text" bind:value={product.name} /><br />
 
-  <label for="productID">Product ID</label>
-  <input type="text" bind:value={product.productID} /><br />
+      <label for="productID">Product ID</label>
+      <input type="text" bind:value={product.productID} /><br />
 
-  <label for="price">Price</label>
-  <input type="text" bind:value={product.price} /><br />
+      <label for="price">Price</label>
+      <input type="text" bind:value={product.price} /><br />
 
-  <label for="image">Image URL</label>
-  <input type="text" bind:value={product.image} /><br />
+      <label for="image">Image URL</label>
+      <input type="text" bind:value={product.image} /><br />
 
-  <input type="submit" value="Submit" />
-</form>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+</div>
