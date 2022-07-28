@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { ContractWithSigner } from '$lib/contract';
   const product_db = import.meta.env.VITE_BACKEND_API_URL;
 
   const product = {
     name: '',
     productID: '',
+    warrentyPeriod: '',
     price: '',
     image: '',
   };
@@ -20,6 +22,14 @@
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    const tx = await ContractWithSigner.addProduct(
+      product.productID,
+      Number(product.warrentyPeriod),
+      false
+    );
+    await tx.wait();
+    console.log(tx);
   };
 </script>
 
@@ -37,6 +47,9 @@
 
       <label for="price">Price</label>
       <input type="text" bind:value={product.price} /><br />
+
+      <label for="period">Period</label>
+      <input type="text" bind:value={product.warrentyPeriod} /> <br />
 
       <label for="image">Image URL</label>
       <input type="text" bind:value={product.image} /><br />

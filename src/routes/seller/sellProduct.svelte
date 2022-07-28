@@ -2,9 +2,9 @@
   import { ContractWithSigner } from '$lib/contract';
 
   const productInfo = {
-    ownerWallet: 0,
-    productID: 0,
-    serialNo: 0,
+    ownerWallet: '',
+    productID: '',
+    serialNo: '',
   };
 
   const mintNFT = async () => {
@@ -13,7 +13,6 @@
       const tx = await ContractWithSigner.mintWarrentyNFT(
         productInfo.ownerWallet,
         productInfo.productID,
-        productInfo.serialNo,
         tokenID
       );
       await tx.wait();

@@ -15,6 +15,8 @@
       const sellTime = await Contract.issueTime(tokenID);
       const warrentyDuration = await Contract.warrentyPeriod(tokenID);
 
+      console.log(sellTime, warrentyDuration);
+
       showResult = true;
 
       const warrentyEnd = sellTime + warrentyDuration;
