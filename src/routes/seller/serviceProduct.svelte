@@ -1,5 +1,5 @@
 <script>
-  import Contract, { wallet } from '$lib/contract';
+  import { ContractWithSigner } from '$lib/contract';
 
   let serviceType = 'repair';
 
@@ -14,8 +14,7 @@
     try {
       const tokenID = productInfo.productID + productInfo.serialNo;
 
-      const repair = await Contract.repairProduct(tokenID);
-
+      const repair = await ContractWithSigner.repairProduct(tokenID);
       await repair.wait();
     } catch (error) {
       console.log('ERROR: ', error);
@@ -28,8 +27,11 @@
       const tokenID = productInfo.productID + productInfo.serialNo;
       const newTokenID = productInfo.productID + productInfo.newSerialNo;
 
-      const replace = await Contract.replaceProduct(tokenID, newTokenID);
-      const burnOld = await Contract._burn(tokenID);
+      const replace = await ContractWithSigner.replaceProduct(
+        tokenID,
+        newTokenID
+      );
+      const burnOld = await ContractWithSigner._burn(tokenID);
 
       await replace.wait();
       await burnOld.wait();

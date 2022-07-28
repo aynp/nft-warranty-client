@@ -1,17 +1,26 @@
+import { browser } from '$app/env';
 import { ethers } from 'ethers';
 
-const ALCHEMY_API_URL = import.meta.env.VITE_ALCHEMY_API_URL;
-const privateKey = import.meta.env.VITE_PRIVATE_KEY;
 const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
 
 import * as contract from '../artifacts/contracts/WarrentyNFT.sol/WarrentyNFT.json';
 
-const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_API_URL);
+// const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_API_URL);
 
-export const wallet = new ethers.Wallet(privateKey, provider);
+let Contract: any, ContractWithSigner: any;
 
-const abi = contract.abi;
+if (browser) {
+  const provider = new ethers.providers.Web3Provider((window as any).ethereum);
 
-const Contract = new ethers.Contract(contractAddress, abi, wallet);
+  await provider.send('eth_requestAccounts', []);
+
+  const signer = provider.getSigner();
+
+  const abi = contract.abi;
+
+  Contract = new ethers.Contract(contractAddress, abi, provider);
+  ContractWithSigner = (Contract as any).connect(signer);
+}
 
 export default Contract;
+export { ContractWithSigner };

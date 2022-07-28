@@ -1,12 +1,12 @@
-<script lang="ts">
-  import Contract from '$lib/contract';
+<script>
+  import { ContractWithSigner } from '$lib/contract';
 
   let walletAddress = '';
 
   const addAdmin = async () => {
     console.log(walletAddress);
     try {
-      const tx = await Contract.addAdmin(walletAddress);
+      const tx = await ContractWithSigner.addAdmin(walletAddress);
       await tx.wait();
       console.log(tx);
     } catch (error) {

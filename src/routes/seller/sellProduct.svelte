@@ -1,7 +1,8 @@
 <script>
-  import Contract, { wallet } from '$lib/contract';
+  import { ContractWithSigner } from '$lib/contract';
 
   const productInfo = {
+    ownerWallet: 0,
     productID: 0,
     serialNo: 0,
   };
@@ -9,8 +10,8 @@
   const mintNFT = async () => {
     try {
       const tokenID = productInfo.productID + productInfo.serialNo;
-      const tx = await Contract.mintWarrentyNFT(
-        wallet.address,
+      const tx = await ContractWithSigner.mintWarrentyNFT(
+        productInfo.ownerWallet,
         productInfo.productID,
         productInfo.serialNo,
         tokenID
