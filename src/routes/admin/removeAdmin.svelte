@@ -3,7 +3,7 @@
 
   let walletAddress = '';
 
-  const addSeller = async () => {
+  const removeAdmin = async () => {
     console.log(walletAddress);
     try {
       const tx = await Contract.removeAdmin(walletAddress);
@@ -15,7 +15,7 @@
   };
 </script>
 
-<form on:submit|preventDefault={addSeller}>
+<form on:submit|preventDefault={removeAdmin}>
   <label for="walletAddress">Wallet Address</label>
   <input type="text" bind:value={walletAddress} />
   <button type="submit">Submit</button>
