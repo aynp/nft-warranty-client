@@ -29,15 +29,20 @@
   };
 </script>
 
-<form on:submit|preventDefault={trackWarrenty}>
-  <label for="productID">Product ID</label>
-  <input type="text" bind:value={productInfo.productID} />
-  <br />
-  <label for="serialNo">Serial No</label>
-  <input type="text" bind:value={productInfo.serialNo} />
-  <br />
-  <button type="submit">Submit</button>
-</form>
+<div class="basicWindow">
+  <h1>Track Warrenty</h1>
+  <div class="basicBox input">
+    <form on:submit|preventDefault={trackWarrenty}>
+      <label for="productID">Product ID</label>
+      <input type="text" bind:value={productInfo.productID} />
+      <br />
+      <label for="serialNo">Serial No</label>
+      <input type="text" bind:value={productInfo.serialNo} />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
 <div class="result" hidden={!showResult}>
   {#if remainingTime > 0}

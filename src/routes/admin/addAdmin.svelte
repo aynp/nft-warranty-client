@@ -15,8 +15,13 @@
   };
 </script>
 
-<form on:submit|preventDefault={addAdmin}>
-  <label for="walletaddress">Wallet Address</label>
-  <input type="text" bind:value={walletAddress} />
-  <button type="submit">Submit</button>
-</form>
+<div class="basicWindow">
+  <h1>Add Admin</h1>
+  <div class="basicBox input">
+    <form on:submit|preventDefault={addAdmin}>
+      <label for="walletaddress">Wallet Address</label>
+      <input type="text" bind:value={walletAddress} />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

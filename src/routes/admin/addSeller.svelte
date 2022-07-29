@@ -14,8 +14,13 @@
   };
 </script>
 
-<form on:submit|preventDefault={addSeller}>
-  <label for="walletAddress">Wallet Address</label>
-  <input type="text" bind:value={walletAddress} />
-  <button type="submit">Submit</button>
-</form>
+<div class="basicWindow">
+  <h1>Add Seller</h1>
+  <div class="basicBox input">
+    <form on:submit|preventDefault={addSeller}>
+      <label for="walletAddress">Wallet Address</label>
+      <input type="text" bind:value={walletAddress} />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

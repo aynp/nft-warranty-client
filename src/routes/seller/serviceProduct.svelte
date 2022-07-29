@@ -41,37 +41,65 @@
   };
 </script>
 
-<label>
-  <input
-    type="radio"
-    bind:group={serviceType}
-    name="serviceType"
-    value={'repair'} />
-  Repair
-</label>
+<div class="basicWindow">
+  <h1>Service Product</h1>
+  <div class="basicBox input">
+    <div class="serviceOptions radio-toolbar">
+      <input
+        type="radio"
+        bind:group={serviceType}
+        name="serviceType"
+        value={'repair'}
+        id="radio1" />
+      <label for="radio1">Repair</label>
 
-<label>
-  <input
-    type="radio"
-    bind:group={serviceType}
-    name="serviceType"
-    value={'replace'} />
-  Replace
-</label>
+      <input
+        type="radio"
+        bind:group={serviceType}
+        name="serviceType"
+        value={'replace'}
+        id="radio2" />
+      <label for="radio2">Replace</label>
+    </div>
 
-<form on:submit|preventDefault={serviceType == 'repair' ? repair : replace}>
-  <label for="productID">Product ID</label>
-  <input type="text" bind:value={productInfo.productID} />
-  <br />
+    <form on:submit|preventDefault={serviceType == 'repair' ? repair : replace}>
+      <label for="productID">Product ID</label>
+      <input type="text" bind:value={productInfo.productID} />
+      <br />
 
-  <label for="serialNo">Serial No</label>
-  <input type="text" bind:value={productInfo.serialNo} />
-  <br />
-  <div hidden={serviceType == 'repair'}>
-    <label for="tokenID">newSerialNo</label>
-    <input type="text" bind:value={productInfo.newSerialNo} />
-    <br />
+      <label for="serialNo">Serial No</label>
+      <input type="text" bind:value={productInfo.serialNo} />
+      <br />
+      <div hidden={serviceType == 'repair'}>
+        <label for="tokenID">newSerialNo</label>
+        <input type="text" bind:value={productInfo.newSerialNo} />
+        <br />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
+</div>
 
-  <button type="submit">Submit</button>
-</form>
+<style>
+  .serviceOptions {
+    display: flex;
+    justify-content: space-around;
+  }
+  .radio-toolbar input[type='radio'] {
+    display: none;
+  }
+
+  .radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 4px 11px;
+    font-family: Arial;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .radio-toolbar input[type='radio']:checked + label {
+    background-color: #bbb;
+  }
+</style>
