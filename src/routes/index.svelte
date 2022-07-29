@@ -8,28 +8,28 @@
   const data = [
     {
       name: 'Admin Panel',
-      imageLink: 'purple.jpg',
+      imageLink: 'admin.png',
       link: '/admin',
     },
     {
       name: 'Seller Panel',
-      imageLink: 'blue.jpg',
+      imageLink: 'seller.png',
       link: '/seller',
     },
     {
       name: 'Customer Panel',
-      imageLink: 'green.jpg',
+      imageLink: 'customer.png',
       link: '/customer',
     },
   ];
 </script>
 
 <svelte:head>
-  <title>Warrenty NFT</title>
-  <meta name="description" content="Warrenty NFT Homepage" />
+  <title>NFT Warrenty</title>
+  <meta name="description" content="NFT Warrenty Homepage" />
 </svelte:head>
 
-<h1>HomePage</h1>
+<h1>NFT Warrenty</h1>
 
 <CardList dataArray={data} />
 

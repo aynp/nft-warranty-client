@@ -7,7 +7,7 @@
 </main>
 
 <footer>
-  <p>Warrenty NFT by <a href="/about">no_AC</a>.</p>
+  <p>by <a href="/about">no_AC</a>.</p>
 </footer>
 
 <style>

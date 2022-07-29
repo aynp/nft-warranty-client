@@ -1,24 +1,24 @@
 <script>
-  import CardList from '$lib/CardList.svelte';
-  const data = [
+  import List from '$lib/List.svelte';
+  const list = [
     {
       name: 'Add Admin',
-      imageLink: 'purple.jpg',
+      imageLink: 'add-admin.svg',
       link: 'admin/addAdmin',
     },
     {
       name: 'Remove Admin',
-      imageLink: 'green.jpg',
+      imageLink: 'remove-admin.svg',
       link: 'admin/removeAdmin',
     },
     {
       name: 'Check Admin',
-      imageLink: 'blue.jpg',
+      imageLink: 'check-admin.svg',
       link: 'admin/checkAdmin',
     },
     {
       name: 'Add Seller',
-      imageLink: 'blue.jpg',
+      imageLink: 'add-seller.svg',
       link: 'admin/addSeller',
     },
   ];
@@ -26,4 +26,4 @@
 
 <h1>Admin Panel</h1>
 
-<CardList dataArray={data} />
+<List {list} />

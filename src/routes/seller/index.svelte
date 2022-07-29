@@ -1,5 +1,24 @@
-<h1>This is the seller panel</h1>
+<script>
+  import List from '$lib/List.svelte';
+  const list = [
+    {
+      name: 'Add Product',
+      imageLink: 'add-product.svg',
+      link: 'seller/addProduct',
+    },
+    {
+      name: 'Sell Product',
+      imageLink: 'sell-product.svg',
+      link: 'seller/sellProduct',
+    },
+    {
+      name: 'Service Product',
+      imageLink: 'service-product.svg',
+      link: 'seller/serviceProduct',
+    },
+  ];
+</script>
 
-<a href="seller/addProduct">Add Product</a>
-<a href="seller/sellProduct">Sell Product</a>
-<a href="seller/serviceProduct">Service Product</a>
+<h1>Seller Panel</h1>
+
+<List {list} />

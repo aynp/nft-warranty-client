@@ -1,3 +1,14 @@
-<h1>This is the customer panel</h1>
+<script>
+  import List from '$lib/List.svelte';
+  const list = [
+    {
+      name: 'Track Warrenty',
+      imageLink: 'track.svg',
+      link: 'customer/trackWarrenty',
+    },
+  ];
+</script>
 
-<a href="/customer/trackWarrenty">Track Warrenty</a>
+<h1>Customer Panel</h1>
+
+<List {list} />

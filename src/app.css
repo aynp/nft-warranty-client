@@ -1,5 +1,5 @@
 @import '@fontsource/fira-mono';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -8,6 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: 'Montserrat', sans-serif;
 }
 
 :root {
