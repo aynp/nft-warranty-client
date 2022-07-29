@@ -1,4 +1,5 @@
 @import '@fontsource/fira-mono';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -34,7 +35,6 @@ body {
   flex-direction: column;
 }
 
-h1,
 h2,
 p {
   font-weight: 400;
@@ -51,11 +51,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-h1 {
-  font-size: 2rem;
-  text-align: center;
 }
 
 h2 {
@@ -167,4 +162,10 @@ button:active {
     0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
     0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  text-align: center;
 }

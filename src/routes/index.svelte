@@ -3,6 +3,25 @@
 </script>
 
 <script lang="ts">
+  import CardList from '$lib/CardList.svelte';
+
+  const data = [
+    {
+      name: 'Admin Panel',
+      imageLink: 'purple.jpg',
+      link: '/admin',
+    },
+    {
+      name: 'Seller Panel',
+      imageLink: 'blue.jpg',
+      link: '/seller',
+    },
+    {
+      name: 'Customer Panel',
+      imageLink: 'green.jpg',
+      link: '/customer',
+    },
+  ];
 </script>
 
 <svelte:head>
@@ -10,23 +29,11 @@
   <meta name="description" content="Warrenty NFT Homepage" />
 </svelte:head>
 
-<section>
-  <h1>HomePage</h1>
-  <a href="/admin">Admin Panel</a>
-  <a href="/seller">Seller Panel</a>
-  <a href="/customer">Customer Panel</a>
-  <a href="/about">About</a>
-</section>
+<h1>HomePage</h1>
+
+<CardList dataArray={data} />
 
 <style>
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-  }
-
   h1 {
     width: 100%;
   }
