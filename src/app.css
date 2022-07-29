@@ -112,7 +112,8 @@ button:focus:not(:focus-visible) {
   margin-bottom: 0.5rem;
 }
 
-.input input[type='text'] {
+.input input[type='text'],
+input[type='number'] {
   font: inherit;
   display: block;
   width: 100%;
@@ -126,7 +127,8 @@ button:focus:not(:focus-visible) {
   margin: 5px 1px 3px 0px;
 }
 
-.input input[type='text']:focus {
+.input input[type='text']:focus,
+input[type='number']:focus {
   outline: none;
   box-shadow: 0 0 5px #5b9dff;
   margin: 5px 1px 3px 0px;
@@ -135,6 +137,12 @@ button:focus:not(:focus-visible) {
 
 .input input[type='radio'] {
   padding: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 button {
@@ -156,6 +164,7 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-left: auto;
+  cursor: pointer;
 }
 
 button:active {

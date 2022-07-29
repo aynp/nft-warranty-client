@@ -27,10 +27,10 @@
     width: 250px;
     height: 250px;
     border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
-      -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
     cursor: pointer;
     transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    transition: all 0.5s ease-in-out;
   }
 
   .card .card_image {
@@ -50,7 +50,7 @@
     text-align: center;
     border-radius: 0px 0px 40px 40px;
     font-family: sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.5rem;
     margin-top: -80px;
     height: 40px;
@@ -58,8 +58,7 @@
   }
 
   .card:hover {
-    /* transform: scale(0.9, 0.9); */
-    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-      -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+    transform: scale(1.01, 1.01);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
   }
 </style>

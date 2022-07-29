@@ -44,7 +44,12 @@
       <input type="text" bind:value={product.productID} />
 
       <label for="price">Price</label>
-      <input type="text" bind:value={product.price} />
+      <input
+        type="number"
+        bind:value={product.price}
+        min="0.00"
+        placeholder="0.00"
+        step="0.01" />
 
       <label for="period">Period</label>
       <input type="text" bind:value={product.warrentyPeriod} />
