@@ -17,7 +17,7 @@
 </script>
 
 <div class="basicWindow">
-  <h1>Add Seller</h1>
+  <h1>Check Admin</h1>
   <div class="basicBox input">
     <form on:submit|preventDefault={checkAdmin}>
       <label for="walletAddress">Wallet Address</label>
