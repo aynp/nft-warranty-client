@@ -67,6 +67,7 @@
   }
 
   .waiting {
+    color: white;
     background: linear-gradient(
       90deg,
       rgba(55, 36, 230, 1) 0%,

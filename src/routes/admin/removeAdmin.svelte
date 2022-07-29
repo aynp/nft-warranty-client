@@ -12,7 +12,7 @@
     try {
       const tx = await ContractWithSigner.removeAdmin(walletAddress);
       await tx.wait();
-      console.log(tx);
+      removed = true;
     } catch (error) {
       console.log('ERROR: ', error);
     }
@@ -48,14 +48,15 @@
   {#await promise}
     <p>Removing {walletAddress} as an admin.</p>
   {:then result}
-    <p>Address {walletAddress} removed as an admin.</p>
+    <p>Address {walletAddress} was removed as an admin.</p>
   {:catch err}
-    <p>Failed to add {walletAddress} as an admin.</p>
+    <p>Failed to remove {walletAddress} as an admin.</p>
   {/await}
 </div>
 
 <style>
   .result {
+    color: white;
     min-width: 50%;
     text-align: center;
     margin: 20px auto;
@@ -68,6 +69,7 @@
   }
 
   .waiting {
+    color: white;
     background: linear-gradient(
       90deg,
       rgba(55, 36, 230, 1) 0%,
@@ -78,8 +80,8 @@
     color: white;
     background: linear-gradient(
       90deg,
-      rgba(36, 230, 126, 1) 0%,
-      rgb(20, 216, 2) 100%
+      rgba(238, 41, 222, 1) 0%,
+      rgba(136, 63, 233, 1) 100%
     );
   }
 </style>

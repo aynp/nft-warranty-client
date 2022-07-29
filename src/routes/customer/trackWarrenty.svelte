@@ -27,6 +27,14 @@
       console.log('ERROR: ', error);
     }
   };
+  const getEvents = async () => {
+    const tokenID = productInfo.productID + productInfo.serialNo;
+    const repairFiler = Contract.filters.Repair(tokenID);
+    const replaceFiler = Contract.filters.Replace(tokenID);
+
+    const repairEvents = await Contract.queryFilter(repairFiler);
+    console.log(repairEvents);
+  };
 </script>
 
 <div class="basicWindow">

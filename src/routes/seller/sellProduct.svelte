@@ -26,6 +26,9 @@
   <h1>Sell Product</h1>
   <div class="basicBox input">
     <form on:submit|preventDefault={mintNFT}>
+      <label for="ownerWallet">Buyers Address</label>
+      <input type="text" bind:value={productInfo.ownerWallet} />
+
       <label for="productID">Product ID</label>
       <input type="text" bind:value={productInfo.productID} />
 

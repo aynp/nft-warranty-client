@@ -6,6 +6,16 @@
       imageLink: 'track.svg',
       link: 'customer/trackWarrenty',
     },
+    {
+      name: 'Am I the Owner',
+      imageLink: 'own-warrenty.svg',
+      link: 'customer/amIOwner',
+    },
+    {
+      name: 'Track Repairs',
+      imageLink: 'track-repairs.svg',
+      link: 'customer/trackRepairs',
+    },
   ];
 </script>
 
