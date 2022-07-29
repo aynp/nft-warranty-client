@@ -35,10 +35,8 @@
     <form on:submit|preventDefault={trackWarrenty}>
       <label for="productID">Product ID</label>
       <input type="text" bind:value={productInfo.productID} />
-      <br />
       <label for="serialNo">Serial No</label>
       <input type="text" bind:value={productInfo.serialNo} />
-      <br />
       <button type="submit">Submit</button>
     </form>
   </div>

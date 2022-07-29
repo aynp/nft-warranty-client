@@ -65,15 +65,13 @@
     <form on:submit|preventDefault={serviceType == 'repair' ? repair : replace}>
       <label for="productID">Product ID</label>
       <input type="text" bind:value={productInfo.productID} />
-      <br />
 
       <label for="serialNo">Serial No</label>
       <input type="text" bind:value={productInfo.serialNo} />
-      <br />
+
       <div hidden={serviceType == 'repair'}>
-        <label for="tokenID">newSerialNo</label>
+        <label for="tokenID">New Serial No</label>
         <input type="text" bind:value={productInfo.newSerialNo} />
-        <br />
       </div>
 
       <button type="submit">Submit</button>
@@ -92,14 +90,16 @@
 
   .radio-toolbar label {
     display: inline-block;
-    background-color: #ddd;
-    padding: 4px 11px;
-    font-family: Arial;
-    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
     cursor: pointer;
   }
 
   .radio-toolbar input[type='radio']:checked + label {
-    background-color: #bbb;
+    background-color: #488df6;
+    color: white;
+    border: 1px solid #488df6;
   }
 </style>

@@ -1,5 +1,14 @@
 @import '@fontsource/fira-mono';
 
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 :root {
   font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -86,11 +95,13 @@ button:focus:not(:focus-visible) {
   align-items: center;
   height: 100%;
 }
+
 .basicBox {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
 }
+
 .input {
   margin: 2rem auto;
   padding: 1rem;
@@ -101,19 +112,59 @@ button:focus:not(:focus-visible) {
 .input label {
   display: block;
   font-weight: bold;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.input input {
+.input input[type='text'] {
   font: inherit;
   display: block;
   width: 100%;
-  border: 1px solid #ccc;
-  padding: 0.15rem;
+  border: 1px solid #dddddd;
+  padding: 0.5rem;
   margin-bottom: 0.5rem;
+  border-radius: 0.4rem;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  /* padding: 3px 0px 3px 3px; */
+  margin: 5px 1px 3px 0px;
 }
 
-.input input:focus {
+.input input[type='text']:focus {
   outline: none;
-  border-color: #4f005f;
+  box-shadow: 0 0 5px #5b9dff;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #488df6;
+}
+
+.input input[type='radio'] {
+  padding: 10px;
+}
+
+button {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: auto;
+}
+
+button:active {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
 }
