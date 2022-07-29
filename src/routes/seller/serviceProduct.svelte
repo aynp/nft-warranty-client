@@ -4,9 +4,9 @@
   let serviceType = 'repair';
 
   const productInfo = {
-    productID: 0,
-    serialNo: 0,
-    newSerialNo: 0,
+    productID: '',
+    serialNo: '',
+    newSerialNo: '',
   };
 
   const repair = async () => {

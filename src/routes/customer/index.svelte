@@ -16,6 +16,11 @@
       imageLink: 'track-repairs.svg',
       link: 'customer/trackRepairs',
     },
+    {
+      name: 'Transfer Product',
+      imageLink: 'transfer.svg',
+      link: 'customer/transferProduct',
+    },
   ];
 </script>
 

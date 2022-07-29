@@ -2,8 +2,8 @@
   import Contract from '$lib/contract';
 
   const productInfo = {
-    productID: 0,
-    serialNo: 0,
+    productID: '',
+    serialNo: '',
   };
 
   const checkOwner = async () => {

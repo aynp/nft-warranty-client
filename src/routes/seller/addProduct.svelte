@@ -5,7 +5,7 @@
   const product = {
     name: '',
     productID: '',
-    warrentyPeriod: '',
+    warrentyPeriod: 0,
     price: '',
     image: '',
   };
@@ -25,11 +25,10 @@
 
     const tx = await ContractWithSigner.addProduct(
       product.productID,
-      Number(product.warrentyPeriod),
+      Number(product.warrentyPeriod / (60 * 60 * 24)),
       false
     );
     await tx.wait();
-    console.log(tx);
   };
 </script>
 
@@ -51,7 +50,7 @@
         placeholder="0.00"
         step="0.01" />
 
-      <label for="period">Period</label>
+      <label for="period">Period (in days)</label>
       <input type="text" bind:value={product.warrentyPeriod} />
 
       <label for="image">Image URL</label>
