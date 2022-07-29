@@ -2,7 +2,18 @@
 
 <slot />
 
+<footer>
+  <a href="/">HOME</a>
+</footer>
+
 <style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+  }
   header {
     height: 10px;
     text-align: center;
