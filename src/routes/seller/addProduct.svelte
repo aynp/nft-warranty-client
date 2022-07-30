@@ -17,16 +17,16 @@
   let added = false;
 
   const addProduct = async () => {
-    fetch(`${product_db}/addProduct`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    // fetch(`${product_db}/addProduct`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(product),
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err));
 
     const tx = await ContractWithSigner.addProduct(
       product.productID,
