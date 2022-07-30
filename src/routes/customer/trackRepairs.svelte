@@ -1,5 +1,6 @@
 <script lang="ts">
   import Contract from '$lib/contract';
+  import ListItem from '$lib/ListItem.svelte';
 
   const productInfo = {
     productID: '',
@@ -24,11 +25,9 @@
       services.push({ time: itemTime, type: 'Repair' });
     }
 
-    for (const item of replaceEvents) {
-      const itemBlock = await item.getBlock();
-      const itemTime = itemBlock.timestamp;
-      services.push({ time: itemTime, type: 'Replace' });
-    }
+    const itemBlock = await replaceEvents[0].getBlock();
+    const itemTime = itemBlock.timestamp;
+    services.push({ time: itemTime, type: 'Replace' });
 
     services.sort((a: any, b: any) => {
       return a.time - b.time;
@@ -36,7 +35,7 @@
 
     services.reverse();
 
-    console.log(services);
+    console.log(services.length);
   };
 
   const handleClick = () => {
@@ -57,13 +56,42 @@
   </div>
 </div>
 
-{#await promise}
-  <p>Waiting</p>
-{:then result}
-  <div>
-    {#each services as { time, type }}
-      <p>{type}</p>
-      <p>{new Date(time)}</p>
-    {/each}
-  </div>
-{/await}
+<div class="result">
+  {#await promise}
+    <p>Waiting</p>
+  {:then result}
+    <div>
+      {#if services.length == 0}
+        <p>No Repairs</p>
+      {:else}
+        {#each services as { time, type }}
+          <div class="item">
+            <p>
+              {type} -
+              {new Date(time * 1000).getDate()},
+              {new Date(time * 1000).getMonth()},
+              {new Date(time * 1000).getFullYear()}
+            </p>
+          </div>
+        {/each}
+      {/if}
+    </div>
+  {/await}
+</div>
+
+<style>
+  .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .item {
+    color: white;
+    font-size: 1rem;
+    background-color: #4b91f7;
+    margin: 10px;
+    padding: 1rem 5rem;
+    border-radius: 0.5rem;
+  }
+</style>

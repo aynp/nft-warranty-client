@@ -17,16 +17,12 @@
       sellTime = await Contract.issueTime(tokenID);
       const warrantyDuration = await Contract.warrantyPeriod(tokenID);
 
-      console.log(sellTime, warrantyDuration);
-
       showResult = true;
 
       const warrantyEnd = Number(sellTime) + Number(warrantyDuration);
       const currentTime = new Date().getTime() / 1000;
 
       remainingTime = +warrantyEnd - +currentTime;
-
-      console.log(currentTime, warrantyEnd, remainingTime, 24 * 60 * 60);
     } catch (error) {
       console.log('ERROR: ', error);
     }
@@ -49,8 +45,6 @@
 <div class="result" hidden={!showResult}>
   {#if remainingTime > 0}
     <p>In Warranty</p>
-    {sellTime}
-    <p>{new Date(sellTime * 1000)}</p>
     <p>
       Remaining Time = {Math.floor(remainingTime / (24 * 60 * 60))} Days
     </p>
@@ -58,3 +52,19 @@
     Out of Warranty
   {/if}
 </div>
+
+<style>
+  .result {
+    min-width: 50%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    font-size: 1.2rem;
+    background: #4b91f7;
+    color: white;
+  }
+</style>

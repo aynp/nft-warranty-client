@@ -37,7 +37,7 @@
         tokenID,
         newTokenID
       );
-      const burnOld = await ContractWithSigner._burn(tokenID);
+      const burnOld = await ContractWithSigner.burn(tokenID);
 
       await replace.wait();
       await burnOld.wait();
