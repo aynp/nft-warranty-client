@@ -26,7 +26,7 @@
 
       remainingTime = +warrantyEnd - +currentTime;
 
-      console.log(currentTime, warrantyEnd, remainingTime);
+      console.log(currentTime, warrantyEnd, remainingTime, 24 * 60 * 60);
     } catch (error) {
       console.log('ERROR: ', error);
     }
@@ -52,7 +52,7 @@
     {sellTime}
     <p>{new Date(sellTime * 1000)}</p>
     <p>
-      Remaining Time = {Math.floor(remainingTime / (24 * 60 * 60 * 1000))} Days
+      Remaining Time = {Math.floor(remainingTime / (24 * 60 * 60))} Days
     </p>
   {:else}
     Out of Warranty
