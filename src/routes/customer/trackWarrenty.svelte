@@ -11,22 +11,22 @@
 
   let sellTime = 0;
 
-  const trackWarrenty = async () => {
+  const trackWarranty = async () => {
     const tokenID = productInfo.productID + productInfo.serialNo;
     try {
       sellTime = await Contract.issueTime(tokenID);
-      const warrentyDuration = await Contract.warrentyPeriod(tokenID);
+      const warrantyDuration = await Contract.warrantyPeriod(tokenID);
 
-      console.log(sellTime, warrentyDuration);
+      console.log(sellTime, warrantyDuration);
 
       showResult = true;
 
-      const warrentyEnd = Number(sellTime) + Number(warrentyDuration);
+      const warrantyEnd = Number(sellTime) + Number(warrantyDuration);
       const currentTime = new Date().getTime() / 1000;
 
-      remainingTime = +warrentyEnd - +currentTime;
+      remainingTime = +warrantyEnd - +currentTime;
 
-      console.log(currentTime, warrentyEnd, remainingTime);
+      console.log(currentTime, warrantyEnd, remainingTime);
     } catch (error) {
       console.log('ERROR: ', error);
     }
@@ -36,7 +36,7 @@
 <div class="basicWindow">
   <h1>Track Warranty</h1>
   <div class="basicBox input">
-    <form on:submit|preventDefault={trackWarrenty}>
+    <form on:submit|preventDefault={trackWarranty}>
       <label for="productID">Product ID</label>
       <input type="text" bind:value={productInfo.productID} />
       <label for="serialNo">Serial No</label>

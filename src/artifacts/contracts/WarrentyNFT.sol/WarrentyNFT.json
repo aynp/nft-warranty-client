@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "WarrentyNFT",
-  "sourceName": "contracts/WarrentyNFT.sol",
+  "contractName": "WarrantyNFT",
+  "sourceName": "contracts/WarrantyNFT.sol",
   "abi": [
     {
       "inputs": [],
@@ -156,7 +156,7 @@
         },
         {
           "internalType": "uint256",
-          "name": "_warrentyPeriod",
+          "name": "_warrantyPeriod",
           "type": "uint256"
         },
         {
@@ -370,7 +370,7 @@
           "type": "uint256"
         }
       ],
-      "name": "mintWarrentyNFT",
+      "name": "mintWarrantyNFT",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -447,7 +447,7 @@
           "type": "uint256"
         }
       ],
-      "name": "productWarrentyPeriod",
+      "name": "productWarrantyPeriod",
       "outputs": [
         {
           "internalType": "uint256",
@@ -724,7 +724,7 @@
           "type": "uint256"
         }
       ],
-      "name": "warrentyPeriod",
+      "name": "warrantyPeriod",
       "outputs": [
         {
           "internalType": "uint256",

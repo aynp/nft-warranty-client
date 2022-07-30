@@ -5,7 +5,7 @@
   const product = {
     name: '',
     productID: '',
-    warrentyPeriod: 0,
+    warrantyPeriod: 0,
     isTransferable: true,
     price: '',
     image: '',
@@ -30,7 +30,7 @@
 
     const tx = await ContractWithSigner.addProduct(
       product.productID,
-      Number(product.warrentyPeriod * (60 * 60 * 24)),
+      Number(product.warrantyPeriod * (60 * 60 * 24)),
       product.isTransferable
     );
     await tx.wait();
@@ -69,7 +69,7 @@
         on:input={reset} />
 
       <label for="period">Period (in days)</label>
-      <input type="text" bind:value={product.warrentyPeriod} on:input={reset} />
+      <input type="text" bind:value={product.warrantyPeriod} on:input={reset} />
 
       <label for="image">Image URL</label>
       <input type="text" bind:value={product.image} on:input={reset} />

@@ -16,7 +16,7 @@
   const mintNFT = async () => {
     try {
       const tokenID = product.productID + product.serialNo;
-      const tx = await ContractWithSigner.mintWarrentyNFT(
+      const tx = await ContractWithSigner.mintWarrantyNFT(
         product.ownerWallet,
         product.productID,
         tokenID

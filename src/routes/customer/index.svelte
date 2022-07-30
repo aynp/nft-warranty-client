@@ -2,13 +2,13 @@
   import List from '$lib/List.svelte';
   const list = [
     {
-      name: 'Track Warrenty',
+      name: 'Track Warranty',
       imageLink: 'track.svg',
-      link: 'customer/trackWarrenty',
+      link: 'customer/trackWarranty',
     },
     {
       name: 'Am I the Owner',
-      imageLink: 'own-warrenty.svg',
+      imageLink: 'own-warranty.svg',
       link: 'customer/amIOwner',
     },
     {

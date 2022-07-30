@@ -25,11 +25,11 @@
 </script>
 
 <svelte:head>
-  <title>NFT Warrenty</title>
-  <meta name="description" content="NFT Warrenty Homepage" />
+  <title>NFT Warranty</title>
+  <meta name="description" content="NFT Warranty Homepage" />
 </svelte:head>
 
-<h1>NFT Warrenty</h1>
+<h1>NFT Warranty</h1>
 
 <CardList dataArray={data} />
 
