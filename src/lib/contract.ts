@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 
 const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
 
-import * as contract from '../artifacts/contracts/WarrantyNFT.sol/WarrantyNFT.json';
+import * as contract from '../artifacts/contracts/WarrentyNFT.sol/WarrantyNFT.json';
 
 // const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_API_URL);
 
