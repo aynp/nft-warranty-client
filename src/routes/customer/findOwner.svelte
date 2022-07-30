@@ -18,7 +18,7 @@
 </script>
 
 <div class="basicWindow">
-  <h1>Track Warrenty</h1>
+  <h1>Track Warranty</h1>
   <div class="basicBox input">
     <form on:submit|preventDefault={checkOwner}>
       <label for="productID">Product ID</label>
