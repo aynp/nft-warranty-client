@@ -1,16 +1,33 @@
-# Client for Warrenties using NFT
+# Client for NFT Warrenties
 
-## Planned
+[![Netlify Status](https://api.netlify.com/api/v1/badges/081f3b02-cfdb-436b-be1b-f688074c4d3d/deploy-status)](https://app.netlify.com/sites/nftwarranty/deploys)
 
-Impliment
+# Deployed at - [nftwarrenty.netlify.app](https://nftwarranty.netlify.app/)
 
-- Admin panel
-- Seller panel
+# Panels
 
-## Planning
+- Admin Panel
 
-- Currently MetaMask is assumed to be used as the wallet.
+  - Check Admin
+  - Add/Remove Admins
+  - Add Seller
 
-## Yet to Plan
+- Seller Panel
 
-- CSS framework to be used.
+  - Add Product
+  - Sell Product
+  - Service Product
+
+- Customer Panel
+
+  - Track Warrenty
+  - Track Repairs
+  - Check if Owner
+  - Transfer Ownership
+
+# Made with
+
+- SvelteKit
+- TypeScript
+- EthersJS
+- Vite
