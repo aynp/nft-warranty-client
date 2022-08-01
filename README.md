@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/081f3b02-cfdb-436b-be1b-f688074c4d3d/deploy-status)](https://app.netlify.com/sites/nftwarranty/deploys)
 
-# Deployed at - [nftwarrenty.netlify.app](https://nftwarranty.netlify.app/)
+# Deployed at - [nftwarranty.netlify.app](https://nftwarranty.netlify.app/)
 
 # Panels
 
@@ -20,7 +20,7 @@
 
 - Customer Panel
 
-  - Track Warrenty
+  - Track Warranty
   - Track Repairs
   - Check if Owner
   - Transfer Ownership
